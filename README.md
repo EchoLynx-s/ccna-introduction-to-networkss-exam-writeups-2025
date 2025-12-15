@@ -613,3 +613,144 @@
 - Items like “end-device installation” and “connector specifications” are not protocol requirements for message transmission.
 
 ---
+
+
+# CCNA Practice Questions 41–50 (Answers + Explanations)
+
+> Format: **Question → Answer → Why it’s correct (CCNA notes)**
+
+---
+
+## Question 41
+**Question:** If Host1 were to transfer a file to the server, what layers of the TCP/IP model would be used?
+
+**Answer:** **Application, transport, Internet, and network access layers**
+
+**Why it’s correct:**
+- A file transfer uses **all 4 layers** of the TCP/IP model end-to-end:
+  - **Application** (e.g., FTP/SMB/HTTP, depending on the file transfer method)
+  - **Transport** (TCP for reliable delivery, ports, segmentation)
+  - **Internet** (IP addressing and routing across routers)
+  - **Network access** (Ethernet/Wi‑Fi framing and physical transmission on each link)
+
+---
+
+## Question 42
+**Question:** What is an advantage for small organizations of adopting IMAP instead of POP?
+
+**Answer:** **Messages are kept in the mail servers until they are manually deleted from the email client.**
+
+**Why it’s correct:**
+- **IMAP** is designed for **server-based mailbox management**: messages stay on the server and sync across multiple devices/clients.
+- **POP3** typically **downloads** messages to the client and often deletes them from the server (unless configured to “leave a copy”), making multi-device use less consistent.
+
+---
+
+## Question 43
+**Question:** Based on the tracert output, which two statements about network connectivity are correct? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **There is connectivity between this device and the device at 192.168.100.1.**
+- ✅ **There are 4 hops between this device and the device at 192.168.100.1.**
+
+**Why it’s correct:**
+- The trace reaches **192.168.100.1** and ends with **“Trace complete.”** → connectivity exists.
+- Hop count interpretation:
+  - Hops 1–4 are intermediate devices (routers)
+  - Hop 5 is the destination
+  - Therefore there are **4 hops in between** the source and destination.
+
+---
+
+## Question 44
+**Question:** What are three characteristics of the CSMA/CD process? (Choose three.)
+
+**Answer (choose three):**
+- ✅ **All of the devices on a segment see data that passes on the network medium.**
+- ✅ **A device listens and waits until the media is not busy before transmitting.**
+- ✅ **After detecting a collision, hosts can attempt to resume transmission after a random time delay has expired.**
+
+**Why it’s correct:**
+- CSMA/CD is used on **shared, half‑duplex Ethernet**:
+  - **Carrier Sense:** listen before talking
+  - **Multiple Access:** many devices share the same medium
+  - **Collision Detection:** collisions can happen; devices stop and use **random backoff** before retrying
+- “Electronic token” is Token Ring (not CSMA/CD). “Jam signal means collision cleared” is incorrect (jam helps ensure everyone detects the collision).
+
+---
+
+## Question 45
+**Question:** Which three layers of the OSI model map to the application layer of the TCP/IP model? (Choose three.)
+
+**Answer (choose three):**
+- ✅ **session**
+- ✅ **presentation**
+- ✅ **application**
+
+**Why it’s correct:**
+- TCP/IP **Application layer** combines OSI layers **5–7**:
+  - **Session (L5)**, **Presentation (L6)**, **Application (L7)**
+
+---
+
+## Question 46
+**Question:** Network access is slow after an employee downloaded a third‑party scanning program. What type of malware might be introduced that causes slow network performance?
+
+**Answer:** **Worm**
+
+**Why it’s correct:**
+- A **worm** can self‑replicate and spread across the network, generating large amounts of traffic and consuming bandwidth/resources → noticeable slowdowns.
+- Phishing/spam are social/email issues; a virus can cause damage but “network-wide slowness from spreading” is classically associated with worms.
+
+---
+
+## Question 47
+**Question:** What are the two most effective ways to defend against malware? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **Update the operating system and other application software.**
+- ✅ **Install and update antivirus software.**
+
+**Why it’s correct:**
+- Patch/updates close known vulnerabilities malware exploits.
+- Updated antivirus/endpoint protection improves detection and removal (signatures + behavior rules).
+- Firewalls and strong passwords help overall security, but these two are the most direct/standard anti‑malware controls.
+
+---
+
+## Question 48
+**Question:** Which wireless technology has low-power and data rate requirements making it popular in home automation applications?
+
+**Answer:** **ZigBee**
+
+**Why it’s correct:**
+- **ZigBee** is designed for **low power**, **low data rate**, and **mesh networking** → common for smart home sensors and automation.
+- Wi‑Fi and 5G are higher bandwidth/power; LoRaWAN is low power but typically used for **long-range IoT** (wide-area), not typical in-home mesh automation.
+
+---
+
+## Question 49
+**Question:** Which type of server relies on record types such as A, NS, AAAA, and MX in order to provide services?
+
+**Answer:** **DNS**
+
+**Why it’s correct:**
+- **DNS** uses record types:
+  - **A** (IPv4), **AAAA** (IPv6), **NS** (name server delegation), **MX** (mail exchange), etc.
+- Those records are the core of how DNS provides name resolution and service location.
+
+---
+
+## Question 50
+**Question:** What would be the interface ID of an IPv6 enabled interface with a MAC address of **1C-6F-65-C2-BD-F8** when the interface ID is generated using the EUI‑64 process?
+
+**Answer:** **1E6F:65FF:FEC2:BDF8**
+
+**Why it’s correct:**
+- EUI‑64 steps:
+  1. Split MAC: **1C-6F-65** and **C2-BD-F8**
+  2. Insert **FFFE**: **1C-6F-65-FF-FE-C2-BD-F8**
+  3. Flip the **U/L bit** in the first byte: **1C → 1E**
+- Final interface ID: **1E6F:65FF:FEC2:BDF8**
+
+---
