@@ -170,3 +170,154 @@
 **CCNA takeaway:** *Find the block size (256 − mask octet) → locate the subnet range → verify it’s not network/broadcast.*
 
 ---
+
+# CCNA Practice Questions 11–20 (Answers + Explanations)
+
+> Format: **Question → Answer → Why it’s correct (CCNA notes)**
+
+---
+
+## Question 11
+**Question:** Match the network with the correct IP address and prefix that will satisfy the usable host addressing requirements for each network.
+
+- Network A: **100 hosts**
+- Network B: **50 hosts**
+- Network C: **25 hosts**
+- Network D: **2 hosts**
+
+**Answer (matches):**
+- **Network A → 192.168.0.0/25**
+- **Network B → 192.168.0.128/26**
+- **Network C → 192.168.0.192/27**
+- **Network D → 192.168.0.224/30**
+
+**Why it’s correct:**
+- A **/25** has 128 total addresses → **126 usable**, enough for 100 hosts.
+- A **/26** has 64 total → **62 usable**, enough for 50 hosts.
+- A **/27** has 32 total → **30 usable**, enough for 25 hosts.
+- A **/30** has 4 total → **2 usable**, perfect for a point-to-point link (2 hosts).
+
+---
+
+## Question 12
+**Question:** Match each description to its corresponding term.
+
+**Answer (matches):**
+- **Message sizing →** the process of breaking up a long message into individual pieces before being sent over the network  
+- **Message encoding →** the process of converting information from one format into another acceptable for transmission  
+- **Message encapsulation →** the process of placing one message format inside another message format
+
+**Why it’s correct:**
+- **Sizing** is segmentation/chunking so data fits into what lower layers can carry.
+- **Encoding** is changing representation (e.g., characters → bits, or encoding scheme).
+- **Encapsulation** is adding headers/trailers as data moves down the stack (L4 segment → L3 packet → L2 frame, etc.).
+
+---
+
+## Question 13
+**Question:** Public folder is Read-Only for anyone who can log in, but Edit rights only for the network admin group. Which AAA component is addressed?
+
+**Answer:** **Authorization**
+
+**Why it’s correct:**
+- **Authentication** = “Who are you?” (login/identity)
+- **Authorization** = “What are you allowed to do?” (permissions like read vs edit)
+- **Accounting** = “What did you do?” (logging/auditing)
+- This scenario is clearly about **permissions** after login → **Authorization**.
+
+---
+
+## Question 14
+**Question:** An admin types `config t` and gets “% Invalid input detected…” (prompt shows `Switch1>`). What is the problem?
+
+**Answer:** **The administrator must first enter privileged EXEC mode before issuing the command.**
+
+**Why it’s correct:**
+- `Switch1>` means **user EXEC mode**.
+- `configure terminal` (and its shortcut `conf t` / `config t`) works from **privileged EXEC** (`Switch1#`).
+- Correct sequence:
+  - `Switch1> enable`
+  - `Switch1# configure terminal`
+
+---
+
+## Question 15
+**Question:** What command can be used on a Windows PC to see the IP configuration of that computer?
+
+**Answer:** **`ipconfig`**
+
+**Why it’s correct:**
+- `ipconfig` displays a Windows host’s IP settings (IP address, mask, gateway, etc.).
+- For more detail (DNS, DHCP info, MAC), use: **`ipconfig /all`**.
+- `show ip interface brief` and `show interfaces` are **Cisco IOS** commands, not Windows.
+
+---
+
+## Question 16
+**Question:** Which two commands can be used on a Windows host to display the routing table? (Choose two.)
+
+**Answer:** **`netstat -r`** and **`route print`**
+
+**Why it’s correct:**
+- **`route print`** shows the Windows routing table directly.
+- **`netstat -r`** also displays the routing table (similar output).
+- `show ip route` is Cisco IOS, `tracert` shows hop path, `netstat -s` shows protocol statistics.
+
+---
+
+## Question 17
+**Question:** Match the description to the IPv6 addressing component.
+
+**Answer (matches):**
+- **Used by an organization to identify subnets →** **subnet ID**
+- **Equivalent to the host portion of an IPv4 address →** **interface ID**
+- **Network portion assigned by the provider →** **global routing prefix**
+
+**Why it’s correct:**
+- The **global routing prefix** is typically ISP-assigned and identifies the organization/site globally.
+- The **subnet ID** is used internally by the organization to create subnets.
+- The **interface ID** identifies the specific interface on the subnet (host-like part).
+
+---
+
+## Question 18
+**Question:** PC1 issues an ARP request because it needs to send a packet to PC2. What happens next?
+
+**Answer:** **PC2 will send an ARP reply with its MAC address.**
+
+**Why it’s correct:**
+- ARP is used on the **local LAN** to map **destination IP → destination MAC**.
+- PC1 sends an **ARP Request (broadcast)**: “Who has PC2’s IP?”
+- The device that owns that IP (PC2) responds with an **ARP Reply (unicast)** containing its **MAC address**.
+- Switches don’t “answer ARP for hosts” (they forward frames). Routers answer ARP for **their own interfaces** (or with special proxy ARP configs).
+
+---
+
+## Question 19
+**Question:** Which two statements are correct about MAC and IP addresses during data transmission if NAT is not involved? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **Destination and source MAC addresses have local significance and change every time a frame goes from one LAN to another.**
+- ✅ **Destination IP addresses in a packet header remain constant along the entire path to a target host.**
+
+**Why it’s correct:**
+- **Layer 2 (MAC) addresses are hop-by-hop.** Each router strips the old L2 header and builds a new frame for the next link → MACs change each hop.
+- **Layer 3 (IP) addresses are end-to-end.** Source/destination IP stay the same across the path (unless NAT is used).
+- What *does* change at L3 each hop is **TTL/hop limit**, not the destination IP.
+
+---
+
+## Question 20
+**Question:** What are two features of ARP? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **If a host is ready to send a packet to a local destination device and it has the IP address but not the MAC address of the destination, it generates an ARP broadcast.**
+- ✅ **If a device receiving an ARP request has the destination IPv4 address, it responds with an ARP reply.**
+
+**Why it’s correct:**
+- ARP Request is typically sent as an **Ethernet broadcast** (destination MAC **FF:FF:FF:FF:FF:FF**).
+- The host that owns the target IPv4 address responds with an **ARP Reply** (usually unicast) providing its MAC.
+- Hosts consult their **ARP cache/table** (not a switch MAC address table) to avoid repeated broadcasts.
+
+---
+
