@@ -321,3 +321,149 @@
 
 ---
 
+# CCNA Practice Questions 21–30 (Answers + Explanations)
+
+> Format: **Question → Answer → Why it’s correct (CCNA notes)**
+
+---
+
+## Question 21
+**Question:** Which switching method drops frames that fail the FCS check?
+
+**Answer:** **Store-and-forward switching**
+
+**Why it’s correct:**
+- **Store-and-forward** receives the **entire Ethernet frame** into memory, then verifies the **FCS (Frame Check Sequence/CRC)**.
+- If the FCS is wrong, the switch **drops** the frame (it does not forward corrupted frames).
+- **Cut-through** starts forwarding after reading the destination MAC (low latency) and **may forward** frames before the FCS is checked.
+
+---
+
+## Question 22
+**Question:** Users report longer delays during certain times of the week. What should engineers check to see if this is normal network behavior?
+
+**Answer:** **The network performance baseline**
+
+**Why it’s correct:**
+- A **baseline** is historical “normal” performance data (latency, throughput, CPU, interface utilization, auth response times, etc.).
+- Comparing current performance to the baseline helps determine if slow periods match **expected peak usage** (e.g., Monday morning logins).
+- Debugs/packet captures/syslog are useful for troubleshooting, but they don’t tell you what “normal” looked like over time.
+
+---
+
+## Question 23
+**Question:** A new admin entered a banner message on a Cisco device. What is the fastest way to test whether the banner is properly configured?
+
+**Answer:** **Exit privileged EXEC mode and press Enter.**
+
+**Why it’s correct:**
+- Banners (like **banner motd**) appear when a session starts (console/VTY) or at the **login/connection prompt**.
+- The quickest test is to **end/exit the current session context** and trigger the “start” screen again (pressing **Enter** after exiting).
+- Rebooting/power cycling also shows the banner, but that’s much slower and disruptive.
+
+> CCNA note: In real life, you can also test by opening a **new SSH/Telnet (if enabled) / console session** to see the banner immediately.
+
+---
+
+## Question 24
+**Question:** Match the application protocols to the correct transport protocols.
+
+**Answer (matches):**
+- **FTP → TCP**
+- **HTTP → TCP**
+- **SMTP → TCP**
+- **DHCP → UDP**
+- **TFTP → UDP**
+
+**Why it’s correct:**
+- **TCP** is used where reliability/ordered delivery is important (FTP, HTTP, SMTP).
+- **UDP** is used for lightweight request/response or simple transfers:
+  - **DHCP** uses UDP (client/server broadcasts, speed, simple exchange).
+  - **TFTP** uses UDP (simple file transfer with minimal overhead).
+
+---
+
+## Question 25
+**Question:** A local user account (username + secret) exists for SSH. Which three additional steps are required to accept only encrypted SSH connections? (Choose three.)
+
+**Answer (choose three):**
+- ✅ **Configure the IP domain name on the router**
+- ✅ **Generate the SSH keys**
+- ✅ **Enable inbound vty SSH sessions**
+
+**Why it’s correct:**
+- SSH requires RSA keys; Cisco IOS needs:
+  - `ip domain-name <domain>` (used when generating keys)
+  - `crypto key generate rsa`
+  - VTY lines set to SSH only: `line vty 0 4` → `transport input ssh`
+- You **do not** enable inbound Telnet if the goal is “only encrypted SSH”.
+- DNS configuration is not required just to accept SSH connections (it’s optional for name resolution).
+- “Two-way pre-shared keys” is not how standard SSH access is configured on IOS.
+
+---
+
+## Question 26
+**Question:** Which information does the `show startup-config` command display?
+
+**Answer:** **The contents of the saved configuration file in the NVRAM**
+
+**Why it’s correct:**
+- **startup-config** = saved config in **NVRAM** (loaded at boot).
+- **running-config** = current active config in **RAM**.
+- IOS image and bootstrap program are different files/locations (Flash/ROM), not shown by `show startup-config`.
+
+---
+
+## Question 27
+**Question:** Match each description with an appropriate IP address.
+
+**Answer (matches):**
+- **Public address → 198.133.219.2**
+- **Loopback address → 127.0.0.1**
+- **Link-local address → 169.254.1.5**
+- **Experimental address → 240.2.6.255**
+
+**Why it’s correct:**
+- **127.0.0.0/8** is reserved for **loopback** testing (localhost).
+- **169.254.0.0/16** is IPv4 **link-local/APIPA** (used when DHCP fails).
+- **240.0.0.0/4** is **experimental (Class E)** and not used for normal host addressing.
+- **198.133.219.2** is not in private ranges (10/8, 172.16/12, 192.168/16) → treated as **public**.
+
+---
+
+## Question 28
+**Question:** What is the consequence of configuring a router with the `ipv6 unicast-routing` global configuration command?
+
+**Answer:** **The IPv6-enabled router interfaces begin sending ICMPv6 Router Advertisement messages.**
+
+**Why it’s correct:**
+- `ipv6 unicast-routing` enables the router to **forward IPv6** (act as an IPv6 router).
+- When forwarding is enabled, IPv6 interfaces can send **ICMPv6 Router Advertisements (RAs)** used for **SLAAC**.
+- It does not automatically “activate” all interfaces, and it does not create a global unicast address by itself.
+
+---
+
+## Question 29
+**Question:** What mechanism is used by a router to prevent a received IPv4 packet from traveling endlessly on a network?
+
+**Answer:** **It decrements the TTL value by 1 and if the result is 0, it discards the packet and sends a Time Exceeded message to the source host.**
+
+**Why it’s correct:**
+- Every router hop **decrements TTL** (Time To Live) by 1.
+- If TTL reaches **0**, the router drops the packet and sends **ICMP Time Exceeded** back to the sender.
+- This prevents routing loops from circulating packets forever (and is how `traceroute/tracert` works).
+
+---
+
+## Question 30
+**Question:** Which range of link-local addresses can be assigned to an IPv6-enabled interface?
+
+**Answer:** **FE80::/10**
+
+**Why it’s correct:**
+- **FE80::/10** is the IPv6 **link-local** prefix (used on the local link only).
+- **FF00::/8** is multicast.
+- **FEC0::/10** was an old “site-local” concept (deprecated).
+- **FDEE::/7** is in the **unique local address (ULA)** space (commonly FC00::/7, with FD00::/8 used in practice).
+
+---
