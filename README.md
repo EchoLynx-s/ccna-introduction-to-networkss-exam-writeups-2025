@@ -7,66 +7,66 @@ Click any question in the navigation to jump. Each question shows the **correct 
 
 ## Quick navigation
 
-- [Q01 — Twisted-pair connector in an Ethernet LAN](#q1) — **Answer:** *RJ‑45 (8P8C)**
-- [Q02 — L2 vs L3 addresses (Host → Router first hop)](#q2) — **Answer:** L2 destination MAC: Router interface MAC (default gateway on Teache...
-- [Q03 — QoS priority order](#q3) — **Answer:** *Live audio conference → Financial transactions → Web browsing**
-- [Q04 — Incorrect default gateway impact](#q4) — **Answer:** *The host cannot communicate with hosts in other networks (off‑subn...
-- [Q05 — Transport layer function (ports)](#q5) — **Answer:** *Two browser windows; transport layer ensures the right data goes t...
-- [Q06 — IPv4 routing table features (choose two)](#q6) — **Answer:** 1) It stores information about routes derived from active router in...
-- [Q07 — NIC attribute at OSI Layer 2](#q7) — **Answer:** *MAC address**
-- [Q08 — NAT advantages/disadvantages (choose two)](#q8) — **Answer:** NAT slows IPv4 address depletion (conserves public IPv4 addresses).
-- [Q09 — Header fields to OSI layers (match)](#q9) — **Answer:** FCS → L2 Data Link
-- [Q10 — Subnet that contains 192.168.1.96 as usable host](#q10) — **Answer:** *192.168.1.64/26**
-- [Q11 — VLSM by host requirements (match)](#q11) — **Answer:** A → 192.168.0.0/25 (126 usable)
-- [Q12 — Message sizing/encoding/encapsulation (match)](#q12) — **Answer:** Message sizing → breaking a long message into smaller pieces before...
-- [Q13 — AAA component (permissions)](#q13) — **Answer:** *Authorization**
-- [Q14 — `config t` invalid from `Switch1>`](#q14) — **Answer:** Must enter privileged EXEC mode first.
-- [Q15 — Windows command for IP configuration](#q15) — **Answer:** *`ipconfig`** (or `ipconfig /all` for full details)
-- [Q16 — Windows commands to display routing table (choose two)](#q16) — **Answer:** *`route print` and `netstat -r`**
-- [Q17 — IPv6 address components (match)](#q17) — **Answer:** Global routing prefix → network portion assigned by provider/ISP
-- [Q18 — What happens after an ARP request?](#q18) — **Answer:** *PC2 sends an ARP reply with its MAC address.**
-- [Q19 — MAC vs IP behavior without NAT (choose two)](#q19) — **Answer:** Source/destination MAC addresses are local and change at every rout...
-- [Q20 — Two features of ARP (choose two)](#q20) — **Answer:** If the sender knows the destination IP but not MAC for a local dest...
-- [Q21 — Switching method that drops frames failing FCS](#q21) — **Answer:** *Store‑and‑forward switching**
-- [Q22 — Checking if periodic slowness is “normal”](#q22) — **Answer:** *Network performance baseline**
-- [Q23 — Fastest way to test a banner](#q23) — **Answer:** *Exit privileged EXEC mode and press Enter** (to trigger a fresh se...
-- [Q24 — Application protocols ↔ Transport protocols (match)](#q24) — **Answer:** FTP → TCP
-- [Q25 — Configure router to accept only SSH (choose three)](#q25) — **Answer:** Configure the IP domain name
-- [Q26 — `show startup-config` displays what?](#q26) — **Answer:** *Saved configuration in NVRAM**
-- [Q27 — Identify public/loopback/link-local/experimental (match)](#q27) — **Answer:** Public → 198.133.219.2
-- [Q28 — `ipv6 unicast-routing` effect](#q28) — **Answer:** *IPv6-enabled interfaces begin sending ICMPv6 Router Advertisements...
-- [Q29 — Prevent endless IPv4 looping](#q29) — **Answer:** *Router decrements TTL by 1; if it reaches 0, drops packet and send...
-- [Q30 — IPv6 link-local range](#q30) — **Answer:** *FE80::/10**
-- [Q31 — What R1 does with incoming Ethernet header](#q31) — **Answer:** *Remove Ethernet header; add a new Layer 2 header for the outgoing ...
-- [Q32 — Shared characteristics of TCP and UDP (choose two)](#q32) — **Answer:** *Port numbering and checksum**
-- [Q33 — Characteristics of IP (choose two)](#q33) — **Answer:** does not require a dedicated end‑to‑end connection (connectionless)
-- [Q34 — Network characteristics in the scenario (choose three)](#q34) — **Answer:** *Security, Fault tolerance, Quality of service**
-- [Q35 — RTP traffic types (choose two)](#q35) — **Answer:** *Voice and Video**
-- [Q36 — Protocol analyzer best capture strategy (choose two)](#q36) — **Answer:** Capture during peak utilization times.
-- [Q37 — What’s wrong with the cable termination?](#q37) — **Answer:** *Untwisted wire length is too long.**
-- [Q38 — Best single mask for 4 subnets (FLSM)](#q38) — **Answer:** *255.255.255.224 (/27)**
-- [Q39 — /29: 5th subnet, router first usable, server last usable](#q39) — **Answer:** *IP 192.168.10.38 /29 (255.255.255.248), gateway 192.168.10.33**
-- [Q40 — What protocols define for communication (choose three)](#q40) — **Answer:** *Message encoding, Delivery options, Message size**
-- [Q41 — TCP/IP layers used for file transfer](#q41) — **Answer:** *Application, Transport, Internet, Network Access**
-- [Q42 — IMAP advantage over POP](#q42) — **Answer:** *Messages stay on the mail server until manually deleted (server‑ba...
-- [Q43 — Interpreting `tracert` output (choose two)](#q43) — **Answer:** There is connectivity between this device and 192.168.100.1.
-- [Q44 — CSMA/CD characteristics (choose three)](#q44) — **Answer:** All devices on a segment see data that passes on the medium.
-- [Q45 — OSI layers that map to TCP/IP Application (choose three)](#q45) — **Answer:** *Session, Presentation, Application**
-- [Q46 — Malware that can slow network by spreading](#q46) — **Answer:** *Worm**
-- [Q47 — Two most effective defenses against malware (choose two)](#q47) — **Answer:** Update OS and application software
-- [Q48 — Low‑power wireless for home automation](#q48) — **Answer:** *ZigBee**
-- [Q49 — Server type that relies on A/AAAA/NS/MX records](#q49) — **Answer:** *DNS**
-- [Q50 — EUI‑64 interface ID from MAC](#q50) — **Answer:** *1E6F:65FF:FEC2:BDF8**
-- [Q51 — Protocols at top layer of TCP/IP (choose two)](#q51) — **Answer:** *DNS and POP**
-- [Q52 — Effect of `ip default-gateway` on a switch](#q52) — **Answer:** *The switch can be remotely managed from a host on another network.**
-- [Q53 — Signal degradation causes in UTP (choose two)](#q53) — **Answer:** *Low‑quality cable/connectors and Improper termination**
-- [Q54 — Frame field ensuring integrity against interference](#q54) — **Answer:** *FCS (Frame Check Sequence)**
-- [Q55 — MAC sublayer functions (choose two)](#q55) — **Answer:** Implements trailer with frame check sequence (FCS) for error detection
-- [Q56 — Smallest mask for 200 devices](#q56) — **Answer:** *255.255.255.0 (/24)**
-- [Q57 — Destination port 22](#q57) — **Answer:** *SSH**
-- [Q58 — SMTP provides what service?](#q58) — **Answer:** *Sending/relaying email (client → server and server → server).**
-- [Q59 — DoS characteristic](#q59) — **Answer:** *An attack that slows or crashes a device or network service.**
-- [Q60 — Attenuation meaning](#q60) — **Answer:** *Loss of signal strength as distance increases.**
+- [Q01 — Twisted-pair connector in an Ethernet LAN](#q1) 
+- [Q02 — L2 vs L3 addresses (Host → Router first hop)](#q2) 
+- [Q03 — QoS priority order](#q3)
+- [Q04 — Incorrect default gateway impact](#q4) 
+- [Q05 — Transport layer function (ports)](#q5)
+- [Q06 — IPv4 routing table features (choose two)](#q6)
+- [Q07 — NIC attribute at OSI Layer 2](#q7) 
+- [Q08 — NAT advantages/disadvantages (choose two)](#q8)
+- [Q09 — Header fields to OSI layers (match)](#q9) 
+- [Q10 — Subnet that contains 192.168.1.96 as usable host](#q10)
+- [Q11 — VLSM by host requirements (match)](#q11)
+- [Q12 — Message sizing/encoding/encapsulation (match)](#q12)
+- [Q13 — AAA component (permissions)](#q13) 
+- [Q14 — `config t` invalid from `Switch1>`](#q14)
+- [Q15 — Windows command for IP configuration](#q15)
+- [Q16 — Windows commands to display routing table (choose two)](#q16)
+- [Q17 — IPv6 address components (match)](#q17)
+- [Q18 — What happens after an ARP request?](#q18)
+- [Q19 — MAC vs IP behavior without NAT (choose two)](#q19) 
+- [Q20 — Two features of ARP (choose two)](#q20) 
+- [Q21 — Switching method that drops frames failing FCS](#q21) 
+- [Q22 — Checking if periodic slowness is “normal”](#q22)
+- [Q23 — Fastest way to test a banner](#q23)
+- [Q24 — Application protocols ↔ Transport protocols (match)](#q24) 
+- [Q25 — Configure router to accept only SSH (choose three)](#q25) 
+- [Q26 — `show startup-config` displays what?](#q26) 
+- [Q27 — Identify public/loopback/link-local/experimental (match)](#q27) 
+- [Q28 — `ipv6 unicast-routing` effect](#q28) 
+- [Q29 — Prevent endless IPv4 looping](#q29)
+- [Q30 — IPv6 link-local range](#q30)
+- [Q31 — What R1 does with incoming Ethernet header](#q31)
+- [Q32 — Shared characteristics of TCP and UDP (choose two)](#q32)
+- [Q33 — Characteristics of IP (choose two)](#q33)
+- [Q34 — Network characteristics in the scenario (choose three)](#q34)
+- [Q35 — RTP traffic types (choose two)](#q35)
+- [Q36 — Protocol analyzer best capture strategy (choose two)](#q36)
+- [Q37 — What’s wrong with the cable termination?](#q37)
+- [Q38 — Best single mask for 4 subnets (FLSM)](#q38) 
+- [Q39 — /29: 5th subnet, router first usable, server last usable](#q39)
+- [Q40 — What protocols define for communication (choose three)](#q40)
+- [Q41 — TCP/IP layers used for file transfer](#q41) 
+- [Q42 — IMAP advantage over POP](#q42)
+- [Q43 — Interpreting `tracert` output (choose two)](#q43)
+- [Q44 — CSMA/CD characteristics (choose three)](#q44) 
+- [Q45 — OSI layers that map to TCP/IP Application (choose three)](#q45)
+- [Q46 — Malware that can slow network by spreading](#q46)
+- [Q47 — Two most effective defenses against malware (choose two)](#q47)
+- [Q48 — Low‑power wireless for home automation](#q48)
+- [Q49 — Server type that relies on A/AAAA/NS/MX records](#q49) 
+- [Q50 — EUI‑64 interface ID from MAC](#q50) 
+- [Q51 — Protocols at top layer of TCP/IP (choose two)](#q51)
+- [Q52 — Effect of `ip default-gateway` on a switch](#q52)
+- [Q53 — Signal degradation causes in UTP (choose two)](#q53)
+- [Q54 — Frame field ensuring integrity against interference](#q54) 
+- [Q55 — MAC sublayer functions (choose two)](#q55)
+- [Q56 — Smallest mask for 200 devices](#q56)
+- [Q57 — Destination port 22](#q57) 
+- [Q58 — SMTP provides what service?](#q58) 
+- [Q59 — DoS characteristic](#q59) 
+- [Q60 — Attenuation meaning](#q60)
 
 ---
 
