@@ -754,3 +754,129 @@
 - Final interface ID: **1E6F:65FF:FEC2:BDF8**
 
 ---
+
+
+# CCNA Practice Questions 51–60 (Answers + Explanations)
+
+> Format: **Question → Answer → Why it’s correct (CCNA notes)**
+
+---
+
+## Question 51
+**Question:** Which two protocols operate at the top layer of the TCP/IP protocol suite? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **DNS**
+- ✅ **POP**
+
+**Why it’s correct:**
+- The **top layer** of the TCP/IP model is the **Application layer**.
+- **DNS** and **POP** are **application layer** protocols used directly by user applications.
+- **TCP/UDP** are Transport layer, **IP** is Internet layer, and **Ethernet** is Network Access layer.
+
+---
+
+## Question 52
+**Question:** The global configuration command `ip default-gateway 172.16.100.1` is applied to a switch. What is the effect of this command?
+
+**Answer:**
+- ✅ **The switch can be remotely managed from a host on another network.**
+
+**Why it’s correct:**
+- On a **Layer 2 switch**, `ip default-gateway` sets the **default gateway used by the switch’s management IP (SVI)** for traffic leaving the local subnet.
+- Without a default gateway, the switch can only be managed from the **same subnet** as its management interface.
+
+---
+
+## Question 53
+**Question:** What are two common causes of signal degradation when using UTP cabling? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **low-quality cable or connectors**
+- ✅ **improper termination**
+
+**Why it’s correct:**
+- Bad cable/connectors and poor termination increase **attenuation**, **crosstalk**, and reflections (impedance issues), degrading signal quality.
+- “Loss of light over long distances” is a **fiber** issue, and “low-quality shielding” applies to **shielded** cable (UTP has *no* shielding).
+
+---
+
+## Question 54
+**Question:** Which frame field is created by a source node and used by a destination node to ensure that a transmitted data signal has not been altered by interference, distortion, or signal loss?
+
+**Answer:**
+- ✅ **Frame check sequence (FCS) field**
+
+**Why it’s correct:**
+- The sender calculates an FCS (CRC) value and puts it in the frame trailer.
+- The receiver recalculates it and compares; if it doesn’t match, the frame is considered corrupted.
+
+---
+
+## Question 55
+**Question:** Which two functions are performed at the MAC sublayer of the OSI Data Link Layer to facilitate Ethernet communication? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **implements trailer with frame check sequence for error detection**
+- ✅ **implements a process to delimit fields within an Ethernet II frame**
+
+**Why it’s correct:**
+- The **MAC sublayer** handles **data encapsulation** tasks like framing (field delimiting) and **error detection** (FCS).
+- Functions like “identifying which network layer protocol is being encapsulated” and “communication between upper layers and the NIC” are typically associated with the **LLC sublayer** in CCNA explanations.
+
+---
+
+## Question 56
+**Question:** A network administrator is adding a new LAN to a branch office. The new LAN must support 200 connected devices. What is the smallest network mask that the network administrator can use for the new network?
+
+**Answer:**
+- ✅ **255.255.255.0** (/**24**)
+
+**Why it’s correct:**
+- /24 provides **256 total** addresses, **254 usable** host addresses (256 − 2).
+- /25 only provides **126 usable**, which is not enough for 200 devices.
+
+---
+
+## Question 57
+**Question:** A client packet is received by a server. The packet has a destination port number of 22. What service is the client requesting?
+
+**Answer:**
+- ✅ **SSH**
+
+**Why it’s correct:**
+- TCP port **22** is the well-known port for **Secure Shell (SSH)** remote login/management.
+
+---
+
+## Question 58
+**Question:** What service is provided by SMTP?
+
+**Answer:**
+- ✅ **Allows clients to send email to a mail server and the servers to send email to other servers.**
+
+**Why it’s correct:**
+- **SMTP** is used for **sending/relaying email** (client → server, and server → server).
+
+---
+
+## Question 59
+**Question:** What characteristic describes a DoS attack?
+
+**Answer:**
+- ✅ **an attack that slows or crashes a device or network service**
+
+**Why it’s correct:**
+- A **Denial of Service (DoS)** attack targets **availability**, overwhelming a service/device so legitimate users can’t access it.
+
+---
+
+## Question 60
+**Question:** What does the term “attenuation” mean in data communication?
+
+**Answer:**
+- ✅ **loss of signal strength as distance increases**
+
+**Why it’s correct:**
+- **Attenuation** is the gradual **weakening of a signal** as it travels through a medium (copper, fiber, etc.).
+
