@@ -467,3 +467,149 @@
 - **FDEE::/7** is in the **unique local address (ULA)** space (commonly FC00::/7, with FD00::/8 used in practice).
 
 ---
+
+# CCNA Practice Questions 31–40 (Answers + Explanations)
+
+> Format: **Question → Answer → Why it’s correct (CCNA notes)**
+
+---
+
+## Question 31
+**Question:** If PC1 is sending a packet to PC2 and routing has been configured between the two routers, what will R1 do with the Ethernet frame header attached by PC1?
+
+**Answer:** **Remove the Ethernet header and configure a new Layer 2 header before sending it out S0/0/0.**
+
+**Why it’s correct:**
+- Routers make forwarding decisions using the **Layer 3 (IP) header**, not the incoming Ethernet header.
+- When R1 receives an **Ethernet frame** from PC1, it **de-encapsulates** (removes) the Layer 2 header/trailer, examines the IP packet, chooses the outgoing interface (serial), then **re-encapsulates** the packet with a **new Layer 2 header** appropriate for the outgoing link (PPP/HDLC on serial).
+- Key idea: **L2 changes hop-by-hop; L3 stays end-to-end (without NAT).**
+
+---
+
+## Question 32
+**Question:** What are two characteristics shared by TCP and UDP? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **port numbering**
+- ✅ **use of checksum**
+
+**Why it’s correct:**
+- **Both TCP and UDP** use **port numbers** to identify source/destination applications (multiplexing/demultiplexing).
+- **Both include a checksum** for error detection of the segment/datagram.
+- Not shared:
+  - **3-way handshake** and **window size** are TCP-only.
+  - **Connectionless communication** describes UDP (TCP is connection-oriented).
+
+---
+
+## Question 33
+**Question:** What are two characteristics of IP? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **does not require a dedicated end-to-end connection**
+- ✅ **operates independently of the network media**
+
+**Why it’s correct:**
+- IP is **connectionless** (no dedicated circuit; it’s packet-switched).
+- IP is **media independent** (works over Ethernet, Wi-Fi, fiber, etc.).
+- IP does **not** guarantee delivery, retransmit, or reorder packets—those are transport-layer responsibilities (TCP).
+
+---
+
+## Question 34
+**Question:** A remote employee logs in with username/password, attends an important video conference, the primary ISP fails, and a secondary connection activates within seconds with no noticeable disruption. Which three network characteristics are described? (Choose three.)
+
+**Answer (choose three):**
+- ✅ **security**
+- ✅ **fault tolerance**
+- ✅ **quality of service**
+
+**Why it’s correct:**
+- Username/password login points to **security** (controlled access).
+- Automatic secondary link takeover is **fault tolerance** (redundancy/availability).
+- Ensuring excellent video quality is **QoS** (prioritizing voice/video, reducing delay/jitter/loss).
+
+---
+
+## Question 35
+**Question:** Which two traffic types use the Real-Time Transport Protocol (RTP)? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **voice**
+- ✅ **video**
+
+**Why it’s correct:**
+- **RTP** is designed for **real-time** media delivery where timing matters (VoIP, video conferencing/streaming).
+- Web browsing and file transfers typically rely on TCP-based application protocols instead.
+
+---
+
+## Question 36
+**Question:** Which two statements describe how to assess traffic flow patterns and network traffic types using a protocol analyzer? (Choose two.)
+
+**Answer (choose two):**
+- ✅ **Capture traffic during peak utilization times to get a good representation of the different traffic types.**
+- ✅ **Perform the capture on different network segments.**
+
+**Why it’s correct:**
+- Capturing at **peak times** shows what the network really looks like under load (real mix of apps and bottlenecks).
+- Capturing on **different segments** (access, distribution, server VLANs, WAN edge, etc.) shows different flows and helps locate where traffic originates/accumulates.
+- “Only capture WAN” / “only the data center” is too narrow; weekends may not represent normal usage.
+
+---
+
+## Question 37
+**Question:** Refer to the exhibit. What is wrong with the displayed termination?
+
+**Answer:** **The untwisted length of each wire is too long.**
+
+**Why it’s correct:**
+- For UTP/STP Ethernet, you should keep the pairs **twisted as close as possible** to the connector.
+- Excessive untwist increases **crosstalk/EMI** and can cause errors—especially at higher speeds.
+
+---
+
+## Question 38
+**Question:** A small site wants the same mask for all networks. Needs: IP phones (22), PCs (20), printers (2), scanners (2). Given 192.168.10.0/24, which single subnet mask is most efficient for four subnets?
+
+**Answer:** **255.255.255.224** (/**27**)
+
+**Why it’s correct:**
+- With one fixed mask (FLSM), you size for the **largest subnet**.
+- Largest requirement is **22 hosts** → needs at least **22 usable**.
+- **/27** gives 32 total addresses → **30 usable**, enough for 22 (and 20).
+- **/28** (14 usable) is too small; **/26** (62 usable) works but wastes more addresses than /27.
+
+---
+
+## Question 39
+**Question:** Network is 192.168.10.0 subnetted with **/29**. Use the **5th subnet** (subnet zero is first). Router interface uses **first usable**, server uses **last usable**. What server IP/mask/gateway allows Internet connectivity?
+
+**Answer:** **IP 192.168.10.38, subnet mask 255.255.255.248, default gateway 192.168.10.33**
+
+**Why it’s correct:**
+- /29 block size = **8** (…0, 8, 16, 24, **32**, 40…).
+- 5th subnet (counting subnet zero as 1st) is **192.168.10.32/29**:
+  - Network: .32
+  - Usable hosts: **.33 – .38**
+  - Broadcast: .39
+- Router (first usable) = **.33**, server (last usable) = **.38**, mask = **255.255.255.248**.
+
+---
+
+## Question 40
+**Question:** What three requirements are defined by the protocols used in network communications to allow message transmission across a network? (Choose three.)
+
+**Answer (choose three):**
+- ✅ **message encoding**
+- ✅ **delivery options**
+- ✅ **message size**
+
+**Why it’s correct:**
+- Network protocols define rules such as:
+  - **How data is represented/encoded** (so both sides interpret bits correctly)
+  - **How messages are delivered** (unicast/multicast/broadcast, reliability expectations, etc.)
+  - **How large messages can be / how they’re segmented** (message size constraints)
+- Items like “end-device installation” and “connector specifications” are not protocol requirements for message transmission.
+
+---
